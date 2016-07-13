@@ -1,0 +1,49 @@
+<snippet>
+	<content><![CDATA[<!DOCTYPE HTML>
+<!--[if IE 6 ]><html class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>第一数码</title>
+	<link rel="stylesheet" href="style/base.css" media="all" />
+	<link rel="stylesheet" href="style/style.css" media="all" />
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<script src="js/jquery-2.2.0.min.js"></script>
+	<!--<![endif]-->
+	<!--[if lt IE 9 ]>
+	<link rel="stylesheet" href="other/ie/ie.css" media="all" />
+	<script src="other/ie/html5.js"></script>
+	<script src="other/ie/jquery-1.12.0.min.js"></script>
+	<script src="other/ie/ie.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<section class="Index">
+		<!-- head -->
+		<header class="header"></header>
+		<!-- /head -->
+		<!-- content -->
+		<section class="content">
+		</section>
+		<!-- /content -->
+		<!-- footer -->
+		<footer class="footer"></footer>
+		<!-- /footer -->
+	</section>
+</body>
+
+</html>
+]]></content>
+	<tabTrigger>html:n</tabTrigger>
+	<key>scope</key>
+	<string>source.html</string>
+	<description>normal.html zsy</description>
+</snippet>

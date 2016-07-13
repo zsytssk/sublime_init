@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if lt IE 6]>$1<![endif]-->]]></content>
+	<tabTrigger>IE</tabTrigger>
+	<description>IE5.x--ie conditional</description>
+	<scope>text.html</scope>
+</snippet>

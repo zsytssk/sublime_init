@@ -1,0 +1,51 @@
+[
+	{ "keys": ["alt+c"], "command": "zsy_copy_file_name" },
+	{ "keys": ["alt+d"], "command": "zsy_project_doc_files"},
+	{ "keys": ["alt+z"], "command": "zsy_copy_keyword_info"},
+	{ "keys": ["alt+z"], "command": "zsy_jumpto_keyword","context": [
+		{ "key": "selector", "operator": "equal", "operand": "text.html.markdown"}
+	]},
+	{ "keys": ["ctrl+alt+z"], "command": "zsy_update_keyword"},
+	// zsycustom
+	{ "keys": ["alt+o"], "command": "zsy_open_code_list"},
+	{ "keys": ["alt+\\"], "command": "toggle_side_bar" },
+
+	{ "keys": ["ctrl+alt+w"], "command": "close_other_tabs" },
+	{ "keys": ["ctrl+alt+shift+w"], "command": "zsy_close_all" },
+	{ "keys": ["f5"], "command": "zsy_insert_time"},
+	{ "keys": ["alt+x"], "command": "zsy_test_convert_to_rem", "args": {"psdwidth": 720}},
+
+	// 移动到行尾行首
+	{ "keys": ["alt+left"], "command": "move_to", "args": { "to": "bol", "extend": false} },// move before of line
+	{ "keys": ["alt+right"], "command": "move_to", "args": { "to": "eol", "extend": false} },// move end of line
+	{ "keys": ["ctrl+alt+j"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line.sublime-macro"} },
+	{ "keys": ["ctrl+alt+k"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Add Line Before.sublime-macro"} },
+
+	// 选择到行尾行首
+	// 插入特殊字符 ; -? ---&&--- --> ->   <<  <<  -| ☐
+	{ "keys": ["alt+,"], "command": "zsy_insert", "args": { "contents": ",", "position": "eol"}},
+	{ "keys": ["alt+;"], "command": "zsy_insert", "args": { "contents": ";", "position": "eol"}},
+	{ "keys": ["ctrl+alt+;"], "command": "zsy_insert", "args": { "contents": ";", "position": "eol", "line_break": true}},
+	{ "keys": ["alt+;"], "command": "zsy_insert", "args": { "contents": ":", "position": "eol"}, "context": [{ "key": "selector", "operator": "equal", "operand": "source.python"}]},
+	{ "keys": ["ctrl+alt+;"], "command": "zsy_insert", "args": { "contents": ":", "position": "eol", "line_break": true}, "context": [{ "key": "selector", "operator": "equal", "operand": "source.python"}]},
+
+	{ "keys": ["alt+."], "command": "zsy_insert", "args": { "contents": ":>"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+shift+."], "command": "zsy_insert", "args": { "contents": "->", "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+shift+alt+."], "command": "zsy_insert", "args": { "contents": "->", "line_break": true, "position": "bol" }, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+shift+\\"], "command": "zsy_insert", "args": { "contents": "-|", "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+alt+shift+\\"], "command": "zsy_insert", "args": { "contents": "-|", "line_break": true, "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+enter"], "command": "zsy_insert", "args": { "contents": "##", "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+alt+enter"], "command": "zsy_insert", "args": { "contents": "##","line_break": true, "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+shift+/"], "command": "zsy_insert", "args": { "contents": "-?", "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+alt+shift+/"], "command": "zsy_insert", "args": { "contents": "-?","line_break": true, "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+shift+3"], "command": "zsy_insert", "args": { "contents": "#", "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+alt+shift+3"], "command": "zsy_insert", "args": { "contents": "#", "line_break": true, "position": "bol"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["alt+shift+7"], "command": "zsy_insert", "args": { "contents": "---&&---"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+\\"], "command": "zsy_insert", "args": { "contents": "---||---"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+1"], "command": "zsy_insert", "args": { "contents": "---!----"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+s"], "command": "zsy_lint_markdown_save", "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+
+	// test
+	{ "keys": ["alt+r"], "command": "zsy_test"},
+
+]

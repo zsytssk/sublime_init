@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA["SimSun"]]></content>
+    <tabTrigger>SS</tabTrigger>
+    <scope>source.css, source.postcss</scope>
+    <description>font-family: "SimSun";</description>
+</snippet>

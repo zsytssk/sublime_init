@@ -1,0 +1,26 @@
+<snippet>
+    <content><![CDATA[<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+
+	<!-- css -->
+	<style>
+
+	</style>
+	<!-- js -->
+	<script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+	${1}
+	<script>
+		${2}
+	</script>
+</body>
+</html>]]></content>
+    <tabTrigger>html:t</tabTrigger>
+    <key>scope</key>
+    <string>source.html</string>
+    <description>test.html zsy</description>
+</snippet>

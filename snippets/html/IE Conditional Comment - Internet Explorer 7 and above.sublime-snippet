@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if gte IE 7]>$1<![endif]-->]]></content>
+	<tabTrigger>IE</tabTrigger>
+	<description>&gt;IE7--ie conditional</description>
+	<scope>text.html</scope>
+</snippet>

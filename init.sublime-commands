@@ -1,0 +1,13 @@
+[{
+  "caption": "zsy: convert px to rem",
+  "command": "zsy_px_to_rem"
+},{
+  "caption": "zsy: convert rem to px",
+  "command": "zsy_rem_to_px"
+}, {
+  "caption": "zsy: project doc files",
+  "command": "zsy_project_doc_files"
+}, {
+  "caption": "zsy: open with vscode",
+  "command": "zsy_open_with_vscode"
+}]

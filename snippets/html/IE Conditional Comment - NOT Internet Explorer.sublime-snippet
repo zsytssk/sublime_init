@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if !IE]>$1<![endif]-->]]></content>
+	<tabTrigger>IE</tabTrigger>
+	<description>Not IE--ie conditional</description>
+	<scope>text.html</scope>
+</snippet>

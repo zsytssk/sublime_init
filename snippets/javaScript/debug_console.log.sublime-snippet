@@ -1,0 +1,6 @@
+<snippet>
+    <content>console.log(${1:1});</content>
+    <tabTrigger>console.log</tabTrigger>
+    <scope>source.js</scope>
+    <description>debug console.log</description>
+</snippet>

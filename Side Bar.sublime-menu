@@ -1,0 +1,20 @@
+[
+   {
+    "caption": "open terminal here",
+    "id": "open-terminal-here",
+    "command": "open_terminal_here",
+    // "command": "showInExplorer",
+    "args": {
+      "paths": []
+    }
+  },
+  {
+    "caption": "show In Explorer",
+    "id": "side-bar-open",
+    "command": "show_in_explorer",
+    // "command": "showInExplorer",
+    "args": {
+      "paths": []
+    }
+  }
+]

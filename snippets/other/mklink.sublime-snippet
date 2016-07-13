@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[mklink /${1:d} "${2:目标文件}" "${3:源文件}"]]></content>
+    <tabTrigger>mklink</tabTrigger>
+    <scope></scope>
+    <description>win mklink</description>
+</snippet>

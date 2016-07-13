@@ -1,0 +1,1 @@
+## zsytssk sublime init file

@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;]]></content>
+    <tabTrigger>ellipsis</tabTrigger>
+    <scope>source.css, source.postcss</scope>
+    <description> css ellipsis</description>
+</snippet>

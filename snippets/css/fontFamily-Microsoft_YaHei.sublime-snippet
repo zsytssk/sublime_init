@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA["Microsoft YaHei"]]></content>
+    <tabTrigger>YH</tabTrigger>
+    <scope>source.css, source.postcss</scope>
+    <description>"Microsoft YaHei";</description>
+</snippet>

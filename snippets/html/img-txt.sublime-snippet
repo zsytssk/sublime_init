@@ -1,0 +1,8 @@
+<snippet>
+	<content><![CDATA[<div class="img-box"><img src="${1}" alt=""></div>
+<div class="txt">${2}</div>]]></content>
+	<tabTrigger>img-txt</tabTrigger>
+	<key>scope</key>
+	<string>source.html</string>
+	<description>img-txt zsy</description>
+</snippet>

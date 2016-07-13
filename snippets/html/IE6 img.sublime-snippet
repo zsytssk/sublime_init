@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[<!--[if lt IE 7 ]><span style="zoom: 1;"></span><![endif]-->]]></content>
+	<tabTrigger>IEI</tabTrigger>
+	<description>IE6 img vertical align</description>
+	<scope>text.html</scope>
+</snippet>
