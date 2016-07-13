@@ -481,7 +481,6 @@ class zsyUpdateKeyword(sublime_plugin.TextCommand):
 		rowcol = view.rowcol(sel0.begin())
 		keyword = view.substr(sel0)
 		pos = str(rowcol[0] + 1) + ':' + str(rowcol[1] + 1)
-		print(pos)
 		arr_box = []
 
 		def analysisStructure(viewItem):
