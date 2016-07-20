@@ -519,7 +519,7 @@ class zsyUpdateKeyword(sublime_plugin.TextCommand):
 					for keyword_item in keyword_list:
 						if keyword_item['keyword_name'] == keyword:
 							if keyword_item['target_pos'] != pos:
-								print(keyword  + '[' +  pos + ']', keyword_item['keyword_region'])
+								pass
 								viewItem.replace(edit, keyword_item['keyword_region'], keyword  + '[' +  pos + ']')
 
 		for viewItem in view.window().views():
