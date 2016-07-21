@@ -1,6 +1,7 @@
 [
 	{ "keys": ["alt+c"], "command": "zsy_copy_file_name" },
 	{ "keys": ["alt+d"], "command": "zsy_project_doc_files"},
+	{ "keys": ["alt+b"], "command": "zsy_css_select"},
 	{ "keys": ["alt+z"], "command": "zsy_copy_keyword_info"},
 	{ "keys": ["alt+z"], "command": "zsy_jumpto_keyword","context": [
 		{ "key": "selector", "operator": "equal", "operand": "text.html.markdown"}
