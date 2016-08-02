@@ -7,7 +7,7 @@ import subprocess
 
 class zsyTest(sublime_plugin.TextCommand):
 	def run(self, edit):
-		view = self.view
+		view = self.view 
 		file = os.path.basename(view.file_name())
 		sel0 = view.sel()[0]
 		rowcol = view.rowcol(sel0.begin())
