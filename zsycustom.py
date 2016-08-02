@@ -2,6 +2,7 @@ import sublime, sublime_plugin
 import os, webbrowser
 import re, time
 import subprocess
+from .SideBarAPI import SideBarItem, SideBarSelection
 
 class zsyLintEvenoteSaveCommand(sublime_plugin.TextCommand):
 	# 格式化 Evenote: 删除空行的空格, 在有文字行后 添加两个空格
@@ -540,6 +541,34 @@ def analysisTxt(str):
 	if content:
 		str = str + " " + content.group(1)
 	return str
+
+# sidebar api
+class openTerminalHere(sublime_plugin.WindowCommand):
+	def run(self, paths = []):
+		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
+			path = item.path().replace("\\","/")
+			subprocess.Popen("D:\zsytssk\other\software\ConEmu\ConEmu.exe /dir " + path)
+
+class showInExplorer(sublime_plugin.WindowCommand):
+	def run(self, paths = []):
+		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
+			path = item.path().replace("\\","/")
+			if os.path.isfile(path):
+				item_path = os.path.dirname(item.path())
+				item_file = os.path.basename(item.path())
+				self.window.run_command('open_dir', { "dir": item_path, "file": item_file})
+			else:
+				self.window.run_command("open_dir", {"dir": path})
+
+class zsySiderbarOpenWithVscode(sublime_plugin.WindowCommand):
+	# open file with vs code
+	def run(self, paths = []):
+		vscode = 'D:\\Program Files (x86)\\Microsoft VS Code\\Code.exe'
+		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
+			path = item.path().replace("\\","/")
+			print(item.path())
+			args = [vscode, '-g', item.path()]
+			subprocess.call(args)
 
 def getFolderFiles(path, type = None, filetypes = None):
 	pathlist = []
