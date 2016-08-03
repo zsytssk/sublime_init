@@ -1,5 +1,13 @@
 [
-   {
+  {
+    "caption": "Open With Vscode",
+    "id": "open-with-vscode",
+    "command": "zsy_siderbar_open_with_vscode",
+    "args": {
+      "paths": []
+    }
+  },
+  {
     "caption": "open terminal here",
     "id": "open-terminal-here",
     "command": "open_terminal_here",
@@ -11,14 +19,6 @@
     "caption": "show In Explorer",
     "id": "side-bar-open",
     "command": "show_in_explorer",
-    "args": {
-      "paths": []
-    }
-  },
-  {
-    "caption": "Open With Vscode",
-    "id": "open-with-vscode",
-    "command": "zsy_siderbar_open_with_vscode",
     "args": {
       "paths": []
     }
