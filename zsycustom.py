@@ -412,7 +412,7 @@ class zsyOpenWithVscode(sublime_plugin.TextCommand):
 		rowcol = view.rowcol(sel0.begin())
 		pos = str(rowcol[0] + 1) + ':' + str(rowcol[1] + 1)
 		args = [vscode, '-g', file + ':' + pos]
-		subprocess.call(args)
+		subprocess.Popen(args)
 
 class zsyCopyKeywordInfo(sublime_plugin.TextCommand):
 	# alt+c copy 关键字信息 keyword[line:column]
@@ -520,7 +520,6 @@ class zsyUpdateKeyword(sublime_plugin.TextCommand):
 					for keyword_item in keyword_list:
 						if keyword_item['keyword_name'] == keyword:
 							if keyword_item['target_pos'] != pos:
-								pass
 								viewItem.replace(edit, keyword_item['keyword_region'], keyword  + '[' +  pos + ']')
 
 		for viewItem in view.window().views():
@@ -568,7 +567,7 @@ class zsySiderbarOpenWithVscode(sublime_plugin.WindowCommand):
 			path = item.path().replace("\\","/")
 			print(item.path())
 			args = [vscode, '-g', item.path()]
-			subprocess.call(args)
+			subprocess.Popen(args)
 
 def getFolderFiles(path, type = None, filetypes = None):
 	pathlist = []
