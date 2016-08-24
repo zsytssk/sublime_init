@@ -354,7 +354,8 @@ class zsyCssSelect(sublime_plugin.TextCommand):
 class zsyOpenCodeList(sublime_plugin.TextCommand):
 	def run(self, edit):
 		allpath = []
-		dir_code = '%zsytssk%\\code'
+		settings = sublime.active_window().active_view().settings()
+		code_path = settings.get('code_path')
 		def on_done(selected):
 			if selected == -1:
 				return
@@ -366,7 +367,7 @@ class zsyOpenCodeList(sublime_plugin.TextCommand):
 			elif os.path.isdir(path):
 				pathT = path.replace("\\","/")
 				self.view.window().run_command('open_dir', { "dir": pathT})
-		allpath = getFolderFiles(os.path.expandvars(dir_code), type=None, filetypes = None)
+		allpath = getFolderFiles(os.path.expandvars(code_path), type=None, filetypes = None)
 		self.view.window().show_quick_panel(prettifyPath(allpath, inProject=False), on_done)
 
 class OpenUrlSelection(sublime_plugin.TextCommand):
@@ -403,7 +404,8 @@ class OpenUrlSelection(sublime_plugin.TextCommand):
 class zsyOpenWithVscode(sublime_plugin.TextCommand):
 	# open file with vs code
 	def run(self, edit):
-		vscode = 'D:\\Program Files (x86)\\Microsoft VS Code\\Code.exe'
+		settings = sublime.active_window().active_view().settings()
+		vscode = settings.get('vscode_path')
 		view = self.view
 		file = view.file_name()
 		if not file:
@@ -546,7 +548,10 @@ class openTerminalHere(sublime_plugin.WindowCommand):
 	def run(self, paths = []):
 		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
 			path = item.path().replace("\\","/")
-			subprocess.Popen("D:\zsytssk\other\software\ConEmu\ConEmu.exe /dir " + path)
+			settings = sublime.active_window().active_view().settings()
+			conemu = settings.get('conemu_path')
+			args = [conemu, '/dir', path]
+			subprocess.Popen(args)
 
 class showInExplorer(sublime_plugin.WindowCommand):
 	def run(self, paths = []):
