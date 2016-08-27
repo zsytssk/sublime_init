@@ -223,11 +223,10 @@ class zsyInsertCommand(sublime_plugin.TextCommand):
 						self.view.run_command('move', {"by": "characters", "forward": True})
 
 		elif 'position' in args and args['position'] == 'eol':
-			for index in range( len(sel) ):
-				self.view.run_command('move_to', {"to": "eol"})
-				self.view.run_command('insert_snippet', {"contents": args['contents']})
-				if 'line_break' in args and args['line_break']:
-					self.view.run_command('insert', {"characters": "\n"})
+			self.view.run_command('move_to', {"to": "eol"})
+			self.view.run_command('insert_snippet', {"contents": args['contents']})
+			if 'line_break' in args and args['line_break']:
+				self.view.run_command('insert', {"characters": "\n"})
 
 		else:
 			for index in range(len(sel)):
