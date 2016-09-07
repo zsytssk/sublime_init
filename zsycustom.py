@@ -80,20 +80,9 @@ class zsyProjectDocFiles(sublime_plugin.TextCommand):
 				pathT = os.path.relpath(path, doc_folder).replace("\\","/")
 				self.view.window().open_file(path)
 
-		filelist = listfolderfile(doc_folder)
-		filenamelist = []
-		for filepath in filelist:
-			print(os.path.basename(filepath))
-			filenamelist.append(os.path.basename(filepath))
-		self.view.window().show_quick_panel(filenamelist, on_done)
+		filelist = getFolderFiles(doc_folder)
+		self.view.window().show_quick_panel(prettifyPath(filelist), on_done)
 
-def listfolderfile(dirname):
-		filelist = []
-		for filename in os.listdir(dirname):
-			filepath = os.path.join(dirname, filename)
-			if os.path.isfile(filepath):
-				filelist.append(filepath)
-		return filelist
 
 class zsyQuickOpenCommand(sublime_plugin.TextCommand):
 	def run(self, edit=None, url=None):
@@ -596,6 +585,14 @@ def getFolderFiles(path, type = None, filetypes = None):
 					continue
 			pathlist.append(file)
 	return pathlist
+
+def listfolderfile(dirname):
+		filelist = []
+		for filename in os.listdir(dirname):
+			filepath = os.path.join(dirname, filename)
+			if os.path.isfile(filepath):
+				filelist.append(filepath)
+		return filelist
 
 def prettifyPath(pathList, inProject=True):
 	panelShow = []
