@@ -250,11 +250,15 @@ class zsyActionContextHandler(sublime_plugin.EventListener):
 		if not key.startswith('zsycustom_action_enabled'):
 			return None
 
-		insert_scope = 'text.plain, text.html.markdown, text.html.markdown.evernote'
+		insert_scope = 'text.plain, text.html.markdown, text.html.markdown.evernote, source.js'
+		format_scope = 'text.plain, text.html.markdown, text.html.markdown.evernote'
 		cur_scope = get_scope(view)
 		prefix, name = key.split('.')
 
 		if name=='insert' and sublime.score_selector(cur_scope, insert_scope):
+			return True
+
+		if name=='format' and sublime.score_selector(cur_scope, format_scope):
 			return True
 
 class zsyInsertTimeCommand(sublime_plugin.TextCommand):

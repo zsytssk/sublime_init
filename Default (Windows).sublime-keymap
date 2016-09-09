@@ -44,7 +44,7 @@
 	{ "keys": ["alt+shift+7"], "command": "zsy_insert", "args": { "contents": "---&&---"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
 	{ "keys": ["ctrl+\\"], "command": "zsy_insert", "args": { "contents": "---||---"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
 	{ "keys": ["ctrl+1"], "command": "zsy_insert", "args": { "contents": "---!----"}, "context": [{ "key": "zsycustom_action_enabled.insert"}] },
-	{ "keys": ["ctrl+s"], "command": "zsy_lint_markdown_save", "context": [{ "key": "zsycustom_action_enabled.insert"}] },
+	{ "keys": ["ctrl+s"], "command": "zsy_lint_markdown_save", "context": [{ "key": "zsycustom_action_enabled.format"}] },
 
 	// test
 	{ "keys": ["alt+r"], "command": "zsy_test"},
