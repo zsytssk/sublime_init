@@ -559,7 +559,8 @@ class showInExplorer(sublime_plugin.WindowCommand):
 class zsySiderbarOpenWithVscode(sublime_plugin.WindowCommand):
 	# open file with vs code
 	def run(self, paths = []):
-		vscode = 'D:\\Program Files (x86)\\Microsoft VS Code\\Code.exe'
+		settings = sublime.active_window().active_view().settings()
+		vscode = settings.get('vscode_path')
 		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
 			path = item.path().replace("\\","/")
 			print(item.path())
