@@ -41,11 +41,12 @@ class zsyRemToPx(sublime_plugin.TextCommand):
 	# 那在一般时候就不能看到效果了 或者会把不需要转化px的转化了
 	def run(self, edit):
 		# 控制转化的倍数
-		time = 76.97
+		time = 50
 		FillLinesReplacements = []
-		RegionsFillLines = self.view.find_all("(\.\d+)rem", sublime.IGNORECASE, "\\1", FillLinesReplacements)
+		RegionsFillLines = self.view.find_all("(\d\.\d+)rem", sublime.IGNORECASE, "\\1", FillLinesReplacements)
 		for i, FillRegion in reversed(list(enumerate(RegionsFillLines))):
 			replace = str(int(float(FillLinesReplacements[i])*time))
+			# print(FillLinesReplacements[i], str(int(float(FillLinesReplacements[i])*time)))
 			self.view.replace(edit, FillRegion, replace + "px")
 
 
