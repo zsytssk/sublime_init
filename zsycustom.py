@@ -543,7 +543,7 @@ class openTerminalHere(sublime_plugin.WindowCommand):
 			path = item.path().replace("\\","/")
 			settings = sublime.active_window().active_view().settings()
 			conemu = settings.get('conemu_path')
-			args = [conemu, '/dir', path]
+			args = [conemu,'-Single', '-Dir', path]
 			subprocess.Popen(args)
 
 class showInExplorer(sublime_plugin.WindowCommand):
