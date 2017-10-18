@@ -1,13 +1,5 @@
 [
   {
-    "caption": "Open With Vscode",
-    "id": "open-with-vscode",
-    "command": "zsy_siderbar_open_with_vscode",
-    "args": {
-      "paths": []
-    }
-  },
-  {
     "caption": "open terminal here",
     "id": "open-terminal-here",
     "command": "open_terminal_here",

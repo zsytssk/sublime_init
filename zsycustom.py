@@ -541,8 +541,11 @@ class openTerminalHere(sublime_plugin.WindowCommand):
 		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
 			path = item.path().replace("\\","/")
 			settings = sublime.active_window().active_view().settings()
-			conemu = settings.get('conemu_path')
-			args = [conemu,'-Single', '-Dir', path]
+			conemu_path = settings.get('conemu_path')
+			zsytssk_path = os.getenv('zsytssk')
+			conemu_path = os.path.join(zsytssk_path, conemu_path)
+			print(path);
+			args = [conemu_path,'-Single', '-Dir', path]
 			subprocess.Popen(args)
 
 class showInExplorer(sublime_plugin.WindowCommand):
@@ -556,16 +559,16 @@ class showInExplorer(sublime_plugin.WindowCommand):
 			else:
 				self.window.run_command("open_dir", {"dir": path})
 
-class zsySiderbarOpenWithVscode(sublime_plugin.WindowCommand):
-	# open file with vs code
-	def run(self, paths = []):
-		settings = sublime.active_window().active_view().settings()
-		vscode = settings.get('vscode_path')
-		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
-			path = item.path().replace("\\","/")
-			print(item.path())
-			args = [vscode, '-g', item.path()]
-			subprocess.Popen(args)
+# class zsySiderbarOpenWithVscode(sublime_plugin.WindowCommand):
+# 	# open file with vs code
+# 	def run(self, paths = []):
+# 		settings = sublime.active_window().active_view().settings()
+# 		vscode = settings.get('vscode_path')
+# 		for item in SideBarSelection(paths).getSelectedItemsWithoutChildItems():
+# 			path = item.path().replace("\\","/")
+# 			print(item.path())
+# 			args = [vscode, '-g', item.path()]
+# 			subprocess.Popen(args)
 
 def getFolderFiles(path, type = None, filetypes = None):
 	pathlist = []
